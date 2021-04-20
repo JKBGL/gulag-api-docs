@@ -361,7 +361,19 @@ https://.../api/get_player_most_played?id=3
 
 #### Response
 ```json
-. . .
+[
+  {
+    "md5": "ee8b9ca2f6373d346818974d632bd0ff",
+    "id": 2127114,
+    "set_id": 1016347,
+    "status": 2,
+    "artist": "Silentroom",
+    "title": "Protoflicker",
+    "version": "Master",
+    "creator": "DeRandom Otaku",
+    "plays": 23
+  }, { ... }
+]
 ```
 
 ## Beatmaps
@@ -382,7 +394,7 @@ Returns information about a given beatmap.
 `id` = The beatmap's id<br>
 `md5` = The beatmap's md5 hash
 
-#### Example
+#### Examples:
 ```md
 https://.../api/get_map_info?id=1172819
 https://.../api/get_map_info?md5=4a4bc3bdb6d951512db592994b08cfc7
@@ -581,7 +593,7 @@ Returns information for a given multiplayer match.
 * Required current match id<br>
 `id` = The multi lobby's id
 
-#### Examples:
+#### Example
 ```md
 https://.../api/get_match?id=0
 ```
