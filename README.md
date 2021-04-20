@@ -1,4 +1,4 @@
-# Gulag API documentation (v3.2.5) - by Jakatebel
+# Gulag API documentation (v3.2.6) - by Jakatebel
   * [Unauthorized Endpoints](#unauthorized-no-api-key-required)
     * [Users](#users)
       * [User count](#user-count)
@@ -187,7 +187,10 @@ https://.../api/get_player_status?name=User
 
 #### Response (offline example)
 ```json
-{ "online": false }
+{
+   "online": false,
+   "last_seen": 1618335591
+}
 ```
 
 #### Response (online idle example)
