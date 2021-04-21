@@ -1,4 +1,4 @@
-# Gulag API documentation (v3.2.6) - by Jakatebel
+# Gulag API documentation (v3.2.7) - by Jakatebel
   * [Unauthorized Endpoints](#unauthorized-no-api-key-required)
     * [Users](#users)
       * [User count](#user-count)
@@ -616,7 +616,7 @@ https://.../api/get_match?id=0
     {
       "id": 3,
       "name": "User"
-    }
+    }, { ... }
   ],
   "in_progress": false,
   "is_scrimming": false,
@@ -647,7 +647,7 @@ https://.../api/get_match?id=0
       "skipped": false,
       "status": 16,
       "team": 0
-    }
+    }, "...": { ... }
   }
 }
 ```
