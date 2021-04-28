@@ -43,8 +43,11 @@ Returns total registered & online player counts.
 #### Response
 ```json
 {
-  "online": 1,
-  "total": 12
+  "status": "success",
+  "counts": {
+    "online": 1,
+    "total": 12
+  }
 }
 ```
 #### Notes
@@ -83,12 +86,15 @@ https://.../api/get_player_info?name=User&scope=all
 #### Response (scope: `info`)
 ```json
 {
-  "id": 3,
-  "name": "User",
-  "safe_name": "user",
-  "priv": 31879,
-  "country": "it",
-  "silence_end": 0
+  "status": "success",
+  "player": {
+    "id": 3,
+    "name": "User",
+    "safe_name": "user",
+    "priv": 31879,
+    "country": "it",
+    "silence_end": 0
+  }
 }
 ```
 
@@ -96,68 +102,71 @@ https://.../api/get_player_info?name=User&scope=all
 #### Response (scope: `all`)
 ```json
 {
-  "id": 3,
-  "name": "User",
-  "safe_name": "user",
-  "priv": 31879,
-  "country": "it",
-  "silence_end": 0,
-  "tscore_vn_std": 310287722,
-  "tscore_vn_taiko": 0,
-  "tscore_vn_catch": 10128,
-  "tscore_vn_mania": 189246577,
-  "tscore_rx_std": 22446060,
-  "tscore_rx_taiko": 0,
-  "tscore_rx_catch": 0,
-  "tscore_ap_std": 0,
-  "rscore_vn_std": 198156251,
-  "rscore_vn_taiko": 0,
-  "rscore_vn_catch": 0,
-  "rscore_vn_mania": 99527289,
-  "rscore_rx_std": 14065180,
-  "rscore_rx_taiko": 0,
-  "rscore_rx_catch": 0,
-  "rscore_ap_std": 0,
-  "pp_vn_std": 1703,
-  "pp_vn_taiko": 0,
-  "pp_vn_catch": 0,
-  "pp_vn_mania": 5688,
-  "pp_rx_std": 3893,
-  "pp_rx_taiko": 0,
-  "pp_rx_catch": 0,
-  "pp_ap_std": 0,
-  "plays_vn_std": 289,
-  "plays_vn_taiko": 0,
-  "plays_vn_catch": 1,
-  "plays_vn_mania": 600,
-  "plays_rx_std": 196,
-  "plays_rx_taiko": 0,
-  "plays_rx_catch": 0,
-  "plays_ap_std": 0,
-  "playtime_vn_std": 18315,
-  "playtime_vn_taiko": 0,
-  "playtime_vn_catch": 21,
-  "playtime_vn_mania": 43354,
-  "playtime_rx_std": 17775,
-  "playtime_rx_taiko": 0,
-  "playtime_rx_catch": 0,
-  "playtime_ap_std": 0,
-  "acc_vn_std": 89.709,
-  "acc_vn_taiko": 0,
-  "acc_vn_catch": 0,
-  "acc_vn_mania": 95.077,
-  "acc_rx_std": 96.694,
-  "acc_rx_taiko": 0,
-  "acc_rx_catch": 0,
-  "acc_ap_std": 0,
-  "maxcombo_vn_std": 842,
-  "maxcombo_vn_taiko": 0,
-  "maxcombo_vn_catch": 13,
-  "maxcombo_vn_mania": 4810,
-  "maxcombo_rx_std": 4938,
-  "maxcombo_rx_taiko": 0,
-  "maxcombo_rx_catch": 0,
-  "maxcombo_ap_std": 0
+  "status": "success",
+  "player": {
+    "id": 3,
+    "name": "User",
+    "safe_name": "user",
+    "priv": 31879,
+    "country": "it",
+    "silence_end": 0,
+    "tscore_vn_std": 411040758,
+    "tscore_vn_taiko": 0,
+    "tscore_vn_catch": 10128,
+    "tscore_vn_mania": 205222203,
+    "tscore_rx_std": 22446060,
+    "tscore_rx_taiko": 0,
+    "tscore_rx_catch": 0,
+    "tscore_ap_std": 0,
+    "rscore_vn_std": 289084793,
+    "rscore_vn_taiko": 0,
+    "rscore_vn_catch": 0,
+    "rscore_vn_mania": 107482018,
+    "rscore_rx_std": 14065180,
+    "rscore_rx_taiko": 0,
+    "rscore_rx_catch": 0,
+    "rscore_ap_std": 0,
+    "pp_vn_std": 2010,
+    "pp_vn_taiko": 0,
+    "pp_vn_catch": 0,
+    "pp_vn_mania": 5850,
+    "pp_rx_std": 3893,
+    "pp_rx_taiko": 0,
+    "pp_rx_catch": 0,
+    "pp_ap_std": 0,
+    "plays_vn_std": 348,
+    "plays_vn_taiko": 0,
+    "plays_vn_catch": 1,
+    "plays_vn_mania": 647,
+    "plays_rx_std": 197,
+    "plays_rx_taiko": 0,
+    "plays_rx_catch": 0,
+    "plays_ap_std": 0,
+    "playtime_vn_std": 24575,
+    "playtime_vn_taiko": 0,
+    "playtime_vn_catch": 21,
+    "playtime_vn_mania": 49642,
+    "playtime_rx_std": 17869,
+    "playtime_rx_taiko": 0,
+    "playtime_rx_catch": 0,
+    "playtime_ap_std": 0,
+    "acc_vn_std": 89.62,
+    "acc_vn_taiko": 0,
+    "acc_vn_catch": 0,
+    "acc_vn_mania": 95.102,
+    "acc_rx_std": 96.694,
+    "acc_rx_taiko": 0,
+    "acc_rx_catch": 0,
+    "acc_ap_std": 0,
+    "max_combo_vn_std": 1072,
+    "max_combo_vn_taiko": 0,
+    "max_combo_vn_catch": 13,
+    "max_combo_vn_mania": 4810,
+    "max_combo_rx_std": 4938,
+    "max_combo_rx_taiko": 0,
+    "max_combo_rx_catch": 0,
+    "max_combo_ap_std": 0
+  }
 }
 ```
 
@@ -188,22 +197,28 @@ https://.../api/get_player_status?name=User
 #### Response (offline example)
 ```json
 {
-   "online": false,
-   "last_seen": 1618335591
+  "status": "success",
+  "player_status": {
+    "online": false,
+    "last_seen": 1619447965
+  }
 }
 ```
 
 #### Response (online idle example)
 ```json
 {
-  "online": true,
-  "login_time": 1618882598.054161,
-  "status": {
-    "action": 0,
-    "info_text": "",
-    "mode": 4,
-    "mods": 200,
-    "beatmap": null
+  "status": "success",
+  "player_status": {
+    "online": true,
+    "login_time": 1619577679.8482022,
+    "status": {
+      "action": 0,
+      "info_text": "",
+      "mode": 0,
+      "mods": 0,
+      "beatmap": null
+    }
   }
 }
 ```
@@ -211,34 +226,37 @@ https://.../api/get_player_status?name=User
 #### Response (online example spectating/watching)
 ```json
 {
-  "online": true,
-  "login_time": 1618882598.054161,
-  "status": {
-    "action": 6,
-    "info_text": "User 2 play BLANKFIELD - Goodbye [Intense]",
-    "mode": 4,
-    "mods": 200,
-    "beatmap": {
-      "md5": "4a4bc3bdb6d951512db592994b08cfc7",
-      "id": 1172819,
-      "set_id": 553906,
-      "artist": "BLANKFIELD",
-      "title": "Goodbye",
-      "version": "Intense",
-      "creator": "Kyubey",
-      "last_update": "2017-02-25T12:56:50",
-      "total_length": 289,
-      "max_combo": 2516,
-      "status": 2,
-      "plays": 7,
-      "passes": 3,
+  "status": "success",
+  "player_status": {
+    "online": true,
+    "login_time": 1619577679.8482022,
+    "status": {
+      "action": 6,
+      "info_text": "User 2 play BLANKFIELD - Goodbye [Intense]",
       "mode": 0,
-      "bpm": 104.5,
-      "cs": 4,
-      "od": 10,
-      "ar": 10,
-      "hp": 4.7,
-      "diff": 8.356
+      "mods": 0,
+      "beatmap": {
+        "md5": "4a4bc3bdb6d951512db592994b08cfc7",
+        "id": 1172819,
+        "set_id": 553906,
+        "artist": "BLANKFIELD",
+        "title": "Goodbye",
+        "version": "Intense",
+        "creator": "Kyubey",
+        "last_update": "2017-02-25T12:56:50",
+        "total_length": 289,
+        "max_combo": 2516,
+        "status": 2,
+        "plays": 9,
+        "passes": 3,
+        "mode": 0,
+        "bpm": 104.5,
+        "cs": 4,
+        "od": 10,
+        "ar": 10,
+        "hp": 4.7,
+        "diff": 8.356
+      }
     }
   }
 }
@@ -266,8 +284,8 @@ Returns a list of best or recent scores for a given player.
 `id` = The users id<br>
 `name` = The user's name
 
-* Required sort<br>
-`sort` = <best/recent>
+* Required scope<br>
+`scope` = <best/recent>
   * `best` - Returns user's best scores
   * `recent` - Returns user's recent scores
 * Required mods<br>
@@ -276,68 +294,65 @@ Returns a list of best or recent scores for a given player.
   * `rx` - Relax
   * `ap` - Autopilot
 * Required mode<br>
-`mode` = <std/taiko/catch/mania>
+`mode` = <0-3>
+* Optional limit<br>
+`limit` = <1-100>, default: 25
 
 #### Example
 ```md
-https://.../api/get_player_scores?id=3&sort=recent&mods=vn&mode=mania
+https://.../api/get_player_scores?id=3&scope=recent&mods=vn&mode=3
 ```
 
 #### Response
 ```json
 {
-  "limit": 299,
+  "status": "success",
   "scores": [
     {
-      "acc": 100,
-      "ar": 5,
-      "artist": "Various Artist",
-      "bpm": 122,
-      "client_flags": 0,
-      "creator": "NikoSek",
-      "cs": 4,
-      "diff": 3.042,
-      "frozen": 1,
-      "grade": "X",
-      "hp": 8,
-      "id": 1886,
-      "last_update": "Sat, 01 Sep 2018 03:53:21 GMT",
-      "map_md5": "944eaa26bc1957e396d97ec88881707d",
-      "maps.id": 1755777,
-      "maps.max_combo": 0,
-      "maps.mode": 3,
-      "maps.status": 2,
-      "max_combo": 585,
-      "md5": "944eaa26bc1957e396d97ec88881707d",
-      "mode": 3,
-      "mods": 0,
-      "n100": 0,
-      "n300": 48,
-      "n50": 0,
-      "ngeki": 289,
-      "nkatu": 0,
-      "nmiss": 0,
-      "od": 8,
-      "passes": 4,
-      "perfect": 1,
-      "play_time": "Mon, 19 Apr 2021 19:16:43 GMT",
-      "plays": 5,
-      "pp": 82.449,
-      "score": 995549,
-      "server": "osu!",
-      "set_id": 838659,
-      "status": 2,
-      "time_elapsed": 42058,
-      "title": "The 4k wea trash pack",
-      "total_length": 37,
-      "userid": 3,
-      "version": "OH YEAH MR KRABS"
+      "id": 47,
+      "score": 6803159,
+      "pp": 563.218,
+      "acc": 96.413,
+      "max_combo": 498,
+      "mods": 16,
+      "n300": 1004,
+      "n100": 23,
+      "n50": 4,
+      "nmiss": 19,
+      "ngeki": 211,
+      "nkatu": 18,
+      "grade": "F",
+      "status": 0,
+      "mode": 0,
+      "play_time": "2020-09-25T00:03:43",
+      "time_elapsed": 183642,
+      "perfect": 0,
+      "beatmap": {
+        "md5": "90d717f5aa233d85abdf02acac3f975e",
+        "id": 915210,
+        "set_id": 423527,
+        "artist": "dj TAKA",
+        "title": "quaver",
+        "version": "Crescendo",
+        "creator": "Monstrata",
+        "last_update": "2016-09-04T04:18:11",
+        "total_length": 0,
+        "max_combo": 0,
+        "status": 2,
+        "plays": 8,
+        "passes": 3,
+        "mode": 0,
+        "bpm": 182,
+        "cs": 4,
+        "od": 9,
+        "ar": 9.6,
+        "hp": 5,
+        "diff": 7.561
+      }
     }, { ... }
   ]
 }
 ```
-#### Notes
-It does not count the bot as a user.
   
 -----------------------------------------
   
@@ -357,26 +372,39 @@ Returns a list of maps most played by a given player.
 `id` = The users id<br>
 `name` = The user's name
 
+* Required mods<br>
+`mods` = <vn/rx/ap>
+  * `vn` - Vanilla
+  * `rx` - Relax
+  * `ap` - Autopilot
+* Required mode<br>
+`mode` = <0-3>
+* Optional limit<br>
+`limit` = <1-100>, default: 25
+
 #### Example
 ```md
-https://.../api/get_player_most_played?id=3
+https://.../api/get_player_most_played?id=3&mods=vn&mode=3&limit=6
 ```
 
 #### Response
 ```json
-[
-  {
-    "md5": "ee8b9ca2f6373d346818974d632bd0ff",
-    "id": 2127114,
-    "set_id": 1016347,
-    "status": 2,
-    "artist": "Silentroom",
-    "title": "Protoflicker",
-    "version": "Master",
-    "creator": "DeRandom Otaku",
-    "plays": 23
-  }, { ... }
-]
+{
+  "status": "success",
+  "maps": [
+    {
+      "md5": "ee8b9ca2f6373d346818974d632bd0ff",
+      "id": 2127114,
+      "set_id": 1016347,
+      "status": 2,
+      "artist": "Silentroom",
+      "title": "Protoflicker",
+      "version": "Master",
+      "creator": "DeRandom Otaku",
+      "plays": 24
+    }, { ... }
+  ]
+}
 ```
 
 ## Beatmaps
@@ -406,26 +434,29 @@ https://.../api/get_map_info?md5=4a4bc3bdb6d951512db592994b08cfc7
 #### Response
 ```json
 {
-  "md5": "4a4bc3bdb6d951512db592994b08cfc7",
-  "id": 1172819,
-  "set_id": 553906,
-  "artist": "BLANKFIELD",
-  "title": "Goodbye",
-  "version": "Intense",
-  "creator": "Kyubey",
-  "last_update": "2017-02-25T12:56:50",
-  "total_length": 289,
-  "max_combo": 2516,
-  "status": 2,
-  "plays": 7,
-  "passes": 3,
-  "mode": 0,
-  "bpm": 104.5,
-  "cs": 4,
-  "od": 10,
-  "ar": 10,
-  "hp": 4.7,
-  "diff": 8.356
+  "status": "success",
+  "map": {
+    "md5": "4a4bc3bdb6d951512db592994b08cfc7",
+    "id": 1172819,
+    "set_id": 553906,
+    "artist": "BLANKFIELD",
+    "title": "Goodbye",
+    "version": "Intense",
+    "creator": "Kyubey",
+    "last_update": "2017-02-25T12:56:50",
+    "total_length": 0,
+    "max_combo": 0,
+    "status": 2,
+    "plays": 16,
+    "passes": 0,
+    "mode": 0,
+    "bpm": 104.5,
+    "cs": 4,
+    "od": 10,
+    "ar": 10,
+    "hp": 4.7,
+    "diff": 8.356
+  }
 }
 ```
 
@@ -455,6 +486,9 @@ Returns the best scores for a given beatmap & mode.
 * Optional mode<br>
 `mode` = `(0-7), explained below`
 
+* Optional limit<br>
+`limit` = <1-100>, default: 50
+
 #### Modes
 ```md
 0 - Standard
@@ -477,29 +511,32 @@ https://.../api/get_map_scores?id=1172819&scope=best&mode=4
 
 #### Response
 ```json
-[
-  {
-    "map_md5": "4a4bc3bdb6d951512db592994b08cfc7",
-    "score": 625250,
-    "pp": 445.184,
-    "acc": 99.361,
-    "max_combo": 1941,
-    "mods": 128,
-    "n300": 1887,
-    "n100": 17,
-    "n50": 1,
-    "nmiss": 0,
-    "ngeki": 296,
-    "nkatu": 15,
-    "grade": "S",
-    "status": 2,
-    "mode": 0,
-    "play_time": "2021-04-05T13:40:02",
-    "time_elapsed": 323012,
-    "userid": 9,
-    "perfect": 0
-  }, { ... }
-]
+{
+  "status": "success",
+  "scores": [
+    {
+      "map_md5": "4a4bc3bdb6d951512db592994b08cfc7",
+      "score": 625250,
+      "pp": 445.184,
+      "acc": 99.361,
+      "max_combo": 1941,
+      "mods": 128,
+      "n300": 1887,
+      "n100": 17,
+      "n50": 1,
+      "nmiss": 0,
+      "ngeki": 296,
+      "nkatu": 15,
+      "grade": "S",
+      "status": 2,
+      "mode": 0,
+      "play_time": "2021-04-05T13:40:02",
+      "time_elapsed": 323012,
+      "userid": 9,
+      "perfect": 0
+    }, { ... }
+  ]
+}
 ```
 
 -----------------------------------------
@@ -527,24 +564,27 @@ https://.../api/get_score_info?id=1731
 #### Response
 ```json
 {
-  "map_md5": "a53a591e8ee0e4cf66a20a070968b194",
-  "score": 546250,
-  "pp": 159.304,
-  "acc": 94.104,
-  "max_combo": 139,
-  "mods": 0,
-  "n300": 135,
-  "n100": 10,
-  "n50": 0,
-  "nmiss": 2,
-  "ngeki": 24,
-  "nkatu": 4,
-  "grade": "A",
-  "status": 2,
-  "mode": 0,
-  "play_time": "2021-04-15T01:59:26",
-  "time_elapsed": 38539,
-  "perfect": 0
+  "status": "success",
+  "score": {
+    "map_md5": "a53a591e8ee0e4cf66a20a070968b194",
+    "score": 546250,
+    "pp": 159.304,
+    "acc": 94.104,
+    "max_combo": 139,
+    "mods": 0,
+    "n300": 135,
+    "n100": 10,
+    "n50": 0,
+    "nmiss": 2,
+    "ngeki": 24,
+    "nkatu": 4,
+    "grade": "A",
+    "status": 2,
+    "mode": 0,
+    "play_time": "2021-04-15T01:59:26",
+    "time_elapsed": 38539,
+    "perfect": 0
+  }
 }
 ```
 
@@ -599,6 +639,13 @@ Returns information for a given multiplayer match.
 #### Example
 ```md
 https://.../api/get_match?id=0
+```
+
+#### Response (not found)
+```json
+{
+  "status": "Match not found."
+}
 ```
 
 #### Response
