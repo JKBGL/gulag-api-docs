@@ -651,50 +651,54 @@ https://.../api/get_match?id=0
 #### Response
 ```json
 {
-  "name": "User's game",
-  "mode": 0,
-  "mods": 0,
-  "seed": 2600202,
-  "host": {
-    "id": 3,
-    "name": "User"
-  },
-  "refs": [
-    {
+  "status": "success",
+  "match": {
+    "name": "User's game",
+    "mode": 0,
+    "mods": 0,
+    "seed": 2600202,
+    "host": {
       "id": 3,
       "name": "User"
-    }, { ... }
-  ],
-  "in_progress": false,
-  "is_scrimming": false,
-  "map": {
-    "id": 962880,
-    "md5": "a48b273b2d4ee9e297ee333f7d216f8f",
-    "name": "TRUE - Hiryuu no Kishi [Knight's Dance]"
-  },
-  "active_slots": {
-    "0": {
-      "loaded": false,
-      "mods": 0,
-      "player": {
+    },
+    "refs": [
+      {
         "id": 3,
         "name": "User"
-      },
-      "skipped": false,
-      "status": 4,
-      "team": 0
+      }, { ... }
+    ],
+    "in_progress": false,
+    "is_scrimming": false,
+    "map": {
+      "id": 962880,
+      "md5": "a48b273b2d4ee9e297ee333f7d216f8f",
+      "name": "TRUE - Hiryuu no Kishi [Knight's Dance]"
     },
-    "1": {
-      "loaded": false,
-      "mods": 0,
-      "player": {
-        "id": 5,
-        "name": "User 2"
+    "active_slots": {
+      "0": {
+        "loaded": false,
+        "mods": 0,
+        "player": {
+          "id": 3,
+          "name": "User"
+        },
+        "skipped": false,
+        "status": 4,
+        "team": 0
       },
-      "skipped": false,
-      "status": 16,
-      "team": 0
-    }, "...": { ... }
+      "1": {
+        "loaded": false,
+        "mods": 0,
+        "player": {
+          "id": 5,
+          "name": "User 2"
+        },
+        "skipped": false,
+        "status": 16,
+        "team": 0
+      },
+      "...": { ... }
+    }
   }
 }
 ```
