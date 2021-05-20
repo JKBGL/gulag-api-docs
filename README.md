@@ -533,7 +533,11 @@ https://.../api/get_map_scores?id=1172819&scope=best&mode=4
       "play_time": "2021-04-05T13:40:02",
       "time_elapsed": 323012,
       "userid": 9,
-      "perfect": 0
+      "perfect": 0,
+      "player_name": "User 8",
+      "clan_id": null,
+      "clan_name": null,
+      "clan_tag": null
     }, { ... }
   ]
 }
