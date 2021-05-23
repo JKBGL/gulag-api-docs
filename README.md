@@ -288,13 +288,13 @@ Returns a list of best or recent scores for a given player.
 `scope` = <best/recent>
   * `best` - Returns user's best scores
   * `recent` - Returns user's recent scores
-* Required mods<br>
-`mods` = <vn/rx/ap>
+* Optional mods<br>
+`mods` = <vn/rx/ap>, default `vn`
   * `vn` - Vanilla
   * `rx` - Relax
   * `ap` - Autopilot
-* Required mode<br>
-`mode` = <0-3>
+* Optional mode<br>
+`mode` = <0-3>, default `0`
 * Optional limit<br>
 `limit` = <1-100>, default: 25
 
@@ -350,7 +350,16 @@ https://.../api/get_player_scores?id=3&scope=recent&mods=vn&mode=3
         "diff": 7.561
       }
     }, { ... }
-  ]
+  ],
+  "player": {
+    "id": 3,
+    "name": "User 1",
+    "clan": {
+      "id": 1,
+      "name": "Clan Name",
+      "tag": "ClanTag"
+    }
+  }
 }
 ```
   
