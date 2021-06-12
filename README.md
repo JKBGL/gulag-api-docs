@@ -1,4 +1,4 @@
-# Gulag API documentation (v3.3.10) - by Jakatebel
+# Gulag API documentation (v3.4.0) - by Jakatebel
   * [Unauthorized Endpoints](#unauthorized-endpoints-no-api-key-required)
     * [Users](#users)
       * [User count](#user-count)
