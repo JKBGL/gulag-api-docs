@@ -469,6 +469,17 @@ https://.../api/get_map_info?md5=4a4bc3bdb6d951512db592994b08cfc7
 }
 ```
 
+#### Statuses
+```
+-1 = NotSubmitted
+ 0 = Pending
+ 1 = UpdateAvailable
+ 2 = Ranked
+ 3 = Approved
+ 4 = Qualified
+ 5 = Loved
+```
+
 -----------------------------------------
 
 ### Beatmap scores
