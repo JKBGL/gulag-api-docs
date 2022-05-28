@@ -1,4 +1,4 @@
-# Gulag API documentation (v3.6.1) - by Jakatebel
+# Bancho.PY API documentation (v4.3.2) - by Jakatebel
   * [Unauthorized Endpoints](#unauthorized-endpoints-no-api-key-required)
     * [Users](#users)
       * [User count](#user-count)
@@ -21,6 +21,8 @@
       * [Set Avatar](#set-avatar)
       <br>
   * [TODO](#todo)
+
+Note: Since 28.12.2021 the api is now located under the `api.` subdomain.
   
 # Unauthorized Endpoints (no api key required)
 
@@ -34,7 +36,7 @@ Returns total registered & online player counts.
 
 #### URL
 ```
-/api/get_player_count
+/get_player_count
 ```
 
 #### Parameters
@@ -63,7 +65,7 @@ Returns info or stats for a given player.
 
 #### URL
 ```
-/api/get_player_info
+/get_player_info
 ```
 
 #### Parameters
@@ -79,24 +81,27 @@ Returns info or stats for a given player.
 
 #### Examples:
 ```md
-https://.../api/get_player_info?id=3&scope=info
-https://.../api/get_player_info?name=User&scope=all
+https://api.../get_player_info?id=3&scope=info
+https://api.../get_player_info?name=User&scope=all
 ```
 
 #### Response (scope: `info`)
 ```json
 {
-  "status": "success",
-  "player": {
-    "info": {
-      "id": 3,
-      "name": "User",
-      "safe_name": "user",
-      "priv": 31879,
-      "country": "it",
-      "silence_end": 0
+    "status": "success",
+    "player": {
+        "info": {
+            "id": 3,
+            "name": "User",
+            "safe_name": "User",
+            "priv": 3,
+            "clan_id": 1,
+            "country": "nl",
+            "silence_end": 0,
+            "donor_end": 0,
+            "preferred_mode": 0
+        }
     }
-  }
 }
 ```
 
@@ -104,147 +109,150 @@ https://.../api/get_player_info?name=User&scope=all
 #### Response (scope: `all`)
 ```json
 {
-  "status": "success",
-  "player": {
-    "info": {
-      "id": 3,
-      "name": "User",
-      "safe_name": "user",
-      "priv": 31879,
-      "country": "it",
-      "silence_end": 0
-    },
-    "stats": [
-      {
-        "tscore": 786032679,
-        "rscore": 199800139,
-        "pp": 1964,
-        "plays": 2135,
-        "playtime": 119243,
-        "acc": 95.315,
-        "max_combo": 1218,
-        "xh_count": 0,
-        "x_count": 1,
-        "sh_count": 0,
-        "s_count": 27,
-        "a_count": 22,
-        "rank": 2,
-        "country_rank": 2
-      },
-      {
-        "tscore": 489754,
-        "rscore": 352075,
-        "pp": 152,
-        "plays": 16,
-        "playtime": 672,
-        "acc": 96.538,
-        "max_combo": 122,
-        "xh_count": 0,
-        "x_count": 0,
-        "sh_count": 0,
-        "s_count": 0,
-        "a_count": 0,
-        "rank": 0,
-        "country_rank": 0
-      },
-      {
-        "tscore": 1854166,
-        "rscore": 524354,
-        "pp": 0,
-        "plays": 15,
-        "playtime": 574,
-        "acc": 94.83,
-        "max_combo": 171,
-        "xh_count": 0,
-        "x_count": 0,
-        "sh_count": 0,
-        "s_count": 0,
-        "a_count": 0,
-        "rank": 0,
-        "country_rank": 0
-      },
-      {
-        "tscore": 615332699,
-        "rscore": 393548018,
-        "pp": 7679,
-        "plays": 2502,
-        "playtime": 177835,
-        "acc": 96.076,
-        "max_combo": 8367,
-        "xh_count": 0,
-        "x_count": 9,
-        "sh_count": 0,
-        "s_count": 135,
-        "a_count": 17,
-        "rank": 0,
-        "country_rank": 0
-      },
-      {
-        "tscore": 61566850,
-        "rscore": 16889390,
-        "pp": 3398,
-        "plays": 1180,
-        "playtime": 60876,
-        "acc": 98.968,
-        "max_combo": 1845,
-        "xh_count": 0,
-        "x_count": 0,
-        "sh_count": 0,
-        "s_count": 0,
-        "a_count": 2,
-        "rank": 2,
-        "country_rank": 2
-      },
-      {
-        "tscore": 153510,
-        "rscore": 77610,
-        "pp": 43,
-        "plays": 5,
-        "playtime": 239,
-        "acc": 97.756,
-        "max_combo": 156,
-        "xh_count": 0,
-        "x_count": 0,
-        "sh_count": 0,
-        "s_count": 0,
-        "a_count": 0,
-        "rank": 0,
-        "country_rank": 0
-      },
-      {
-        "tscore": 87030,
-        "rscore": 87030,
-        "pp": 0,
-        "plays": 2,
-        "playtime": 90,
-        "acc": 95.315,
-        "max_combo": 80,
-        "xh_count": 0,
-        "x_count": 0,
-        "sh_count": 0,
-        "s_count": 0,
-        "a_count": 0,
-        "rank": 0,
-        "country_rank": 0
-      },
-      {
-        "tscore": 4130760,
-        "rscore": 354030,
-        "pp": 157,
-        "plays": 166,
-        "playtime": 5109,
-        "acc": 100.0,
-        "max_combo": 125,
-        "xh_count": 0,
-        "x_count": 0,
-        "sh_count": 0,
-        "s_count": 0,
-        "a_count": 0,
-        "rank": 0,
-        "country_rank": 0
-      }
-    ]
-  }
+    "status": "success",
+    "player": {
+        "info": {
+            "id": 3,
+            "name": "User",
+            "safe_name": "User",
+            "priv": 3,
+            "clan_id": 1,
+            "country": "nl",
+            "silence_end": 0,
+            "donor_end": 0,
+            "preferred_mode": 0
+        },
+        "stats": {
+            "0": {
+                "tscore": 697767499,
+                "rscore": 129855080,
+                "pp": 832,
+                "plays": 2111,
+                "playtime": 104936,
+                "acc": 88.099,
+                "max_combo": 972,
+                "xh_count": 0,
+                "x_count": 1,
+                "sh_count": 3,
+                "s_count": 1,
+                "a_count": 10,
+                "rank": 47,
+                "country_rank": 4
+            },
+            "1": {
+                "tscore": 912918,
+                "rscore": 0,
+                "pp": 0,
+                "plays": 3,
+                "playtime": 332,
+                "acc": 0.0,
+                "max_combo": 325,
+                "xh_count": 0,
+                "x_count": 0,
+                "sh_count": 0,
+                "s_count": 0,
+                "a_count": 0,
+                "rank": 0,
+                "country_rank": 0
+            },
+            "2": {
+                "tscore": 0,
+                "rscore": 0,
+                "pp": 0,
+                "plays": 0,
+                "playtime": 0,
+                "acc": 0.0,
+                "max_combo": 0,
+                "xh_count": 0,
+                "x_count": 0,
+                "sh_count": 0,
+                "s_count": 0,
+                "a_count": 0,
+                "rank": 0,
+                "country_rank": 0
+            },
+            "3": {
+                "tscore": 0,
+                "rscore": 0,
+                "pp": 0,
+                "plays": 0,
+                "playtime": 0,
+                "acc": 0.0,
+                "max_combo": 0,
+                "xh_count": 0,
+                "x_count": 0,
+                "sh_count": 0,
+                "s_count": 0,
+                "a_count": 0,
+                "rank": 0,
+                "country_rank": 0
+            },
+            "4": {
+                "tscore": 223942543,
+                "rscore": 31385852,
+                "pp": 6176,
+                "plays": 1101,
+                "playtime": 54528,
+                "acc": 95.199,
+                "max_combo": 1883,
+                "xh_count": 1,
+                "x_count": 1,
+                "sh_count": 14,
+                "s_count": 2,
+                "a_count": 56,
+                "rank": 16,
+                "country_rank": 3
+            },
+            "5": {
+                "tscore": 793560,
+                "rscore": 236250,
+                "pp": 97,
+                "plays": 15,
+                "playtime": 746,
+                "acc": 60.465,
+                "max_combo": 138,
+                "xh_count": 0,
+                "x_count": 0,
+                "sh_count": 0,
+                "s_count": 0,
+                "a_count": 0,
+                "rank": 5,
+                "country_rank": 1
+            },
+            "6": {
+                "tscore": 109640,
+                "rscore": 0,
+                "pp": 0,
+                "plays": 3,
+                "playtime": 51,
+                "acc": 0.0,
+                "max_combo": 0,
+                "xh_count": 0,
+                "x_count": 0,
+                "sh_count": 0,
+                "s_count": 0,
+                "a_count": 0,
+                "rank": 0,
+                "country_rank": 0
+            },
+            "8": {
+                "tscore": 18915479,
+                "rscore": 10722031,
+                "pp": 823,
+                "plays": 168,
+                "playtime": 9851,
+                "acc": 80.184,
+                "max_combo": 720,
+                "xh_count": 0,
+                "x_count": 0,
+                "sh_count": 0,
+                "s_count": 0,
+                "a_count": 3,
+                "rank": 0,
+                "country_rank": 0
+            }
+        }
+    }
 }
 ```
 
@@ -258,7 +266,7 @@ Returns a player's current status, if online.
 
 #### URL
 ```
-/api/get_player_status
+/get_player_status
 ```
 
 #### Parameters
@@ -268,75 +276,75 @@ Returns a player's current status, if online.
 
 #### Examples:
 ```md
-https://.../api/get_player_status?id=3
-https://.../api/get_player_status?name=User
+https://api.../get_player_status?id=3
+https://api.../get_player_status?name=User
 ```
 
 #### Response (offline example)
 ```json
 {
-  "status": "success",
-  "player_status": {
-    "online": false,
-    "last_seen": 1619447965
-  }
+    "status": "success",
+    "player_status": {
+        "online": false,
+        "last_seen": 1653680340
+    }
 }
 ```
 
 #### Response (online idle example)
 ```json
 {
-  "status": "success",
-  "player_status": {
-    "online": true,
-    "login_time": 1619577679.8482022,
-    "status": {
-      "action": 0,
-      "info_text": "",
-      "mode": 0,
-      "mods": 0,
-      "beatmap": null
+    "status": "success",
+    "player_status": {
+        "online": true,
+        "login_time": 1619577679.8482022,
+        "status": {
+            "action": 0,
+            "info_text": "",
+            "mode": 0,
+            "mods": 0,
+            "beatmap": null
+        }
     }
-  }
 }
 ```
 
 #### Response (online example spectating/watching)
 ```json
 {
-  "status": "success",
-  "player_status": {
-    "online": true,
-    "login_time": 1619577679.8482022,
-    "status": {
-      "action": 6,
-      "info_text": "User 2 play BLANKFIELD - Goodbye [Intense]",
-      "mode": 0,
-      "mods": 0,
-      "beatmap": {
-        "md5": "4a4bc3bdb6d951512db592994b08cfc7",
-        "id": 1172819,
-        "set_id": 553906,
-        "artist": "BLANKFIELD",
-        "title": "Goodbye",
-        "version": "Intense",
-        "creator": "Kyubey",
-        "last_update": "2017-02-25T12:56:50",
-        "total_length": 289,
-        "max_combo": 2516,
-        "status": 2,
-        "plays": 9,
-        "passes": 3,
-        "mode": 0,
-        "bpm": 104.5,
-        "cs": 4,
-        "od": 10,
-        "ar": 10,
-        "hp": 4.7,
-        "diff": 8.356
-      }
+    "status": "success",
+    "player_status": {
+        "online": true,
+        "login_time": 1619577679.8482022,
+        "status": {
+            "action": 6,
+            "info_text": "User 2 play BLANKFIELD - Goodbye [Intense]",
+            "mode": 0,
+            "mods": 0,
+            "beatmap": {
+                "md5": "4a4bc3bdb6d951512db592994b08cfc7",
+                "id": 1172819,
+                "set_id": 553906,
+                "artist": "BLANKFIELD",
+                "title": "Goodbye",
+                "version": "Intense",
+                "creator": "Kyubey",
+                "last_update": "2017-02-25T12:56:50",
+                "total_length": 289,
+                "max_combo": 2516,
+                "status": 2,
+                "plays": 9,
+                "passes": 3,
+                "mode": 0,
+                "bpm": 104.5,
+                "cs": 4,
+                "od": 10,
+                "ar": 10,
+                "hp": 4.7,
+                "diff": 8.356
+            }
+        }
     }
-  }
 }
 ```
 #### Notes
@@ -354,7 +362,7 @@ Returns a list of best or recent scores for a given player.
 
 #### URL
 ```
-/api/get_player_scores
+/get_player_scores
 ```
 
 #### Parameters
@@ -366,78 +374,73 @@ Returns a list of best or recent scores for a given player.
 `scope` = <best/recent>
   * `best` - Returns user's best scores
   * `recent` - Returns user's recent scores
-* Optional mods<br>
-`mods` = <vn/rx/ap>, default `vn`
-  * `vn` - Vanilla
-  * `rx` - Relax
-  * `ap` - Autopilot
 * Optional mode<br>
-`mode` = <0-3>, default `0`
+`mode` = <0-8>, default `0`
 * Optional limit<br>
 `limit` = <1-100>, default: 25
 
 #### Example
 ```md
-https://.../api/get_player_scores?id=3&scope=recent&mods=vn&mode=3
+https://api.../get_player_scores?id=3&scope=recent&mods=vn&mode=3
 ```
 
 #### Response
 ```json
 {
-  "status": "success",
-  "scores": [
-    {
-      "id": 47,
-      "score": 6803159,
-      "pp": 563.218,
-      "acc": 96.413,
-      "max_combo": 498,
-      "mods": 16,
-      "n300": 1004,
-      "n100": 23,
-      "n50": 4,
-      "nmiss": 19,
-      "ngeki": 211,
-      "nkatu": 18,
-      "grade": "F",
-      "status": 0,
-      "mode": 0,
-      "play_time": "2020-09-25T00:03:43",
-      "time_elapsed": 183642,
-      "perfect": 0,
-      "beatmap": {
-        "md5": "90d717f5aa233d85abdf02acac3f975e",
-        "id": 915210,
-        "set_id": 423527,
-        "artist": "dj TAKA",
-        "title": "quaver",
-        "version": "Crescendo",
-        "creator": "Monstrata",
-        "last_update": "2016-09-04T04:18:11",
-        "total_length": 0,
-        "max_combo": 0,
-        "status": 2,
-        "plays": 8,
-        "passes": 3,
+    "status": "success",
+    "scores": [{
+        "id": 47,
+        "score": 6803159,
+        "pp": 563.218,
+        "acc": 96.413,
+        "max_combo": 498,
+        "mods": 16,
+        "n300": 1004,
+        "n100": 23,
+        "n50": 4,
+        "nmiss": 19,
+        "ngeki": 211,
+        "nkatu": 18,
+        "grade": "F",
+        "status": 0,
         "mode": 0,
-        "bpm": 182,
-        "cs": 4,
-        "od": 9,
-        "ar": 9.6,
-        "hp": 5,
-        "diff": 7.561
-      }
-    }, { ... }
-  ],
-  "player": {
-    "id": 3,
-    "name": "User 1",
-    "clan": {
-      "id": 1,
-      "name": "Clan Name",
-      "tag": "ClanTag"
+        "play_time": "2020-09-25T00:03:43",
+        "time_elapsed": 183642,
+        "perfect": 0,
+        "beatmap": {
+            "md5": "90d717f5aa233d85abdf02acac3f975e",
+            "id": 915210,
+            "set_id": 423527,
+            "artist": "dj TAKA",
+            "title": "quaver",
+            "version": "Crescendo",
+            "creator": "Monstrata",
+            "last_update": "2016-09-04T04:18:11",
+            "total_length": 0,
+            "max_combo": 0,
+            "status": 2,
+            "plays": 8,
+            "passes": 3,
+            "mode": 0,
+            "bpm": 182,
+            "cs": 4,
+            "od": 9,
+            "ar": 9.6,
+            "hp": 5,
+            "diff": 7.561
+        }
+    }, {
+        ...
+    }],
+    "player": {
+        "id": 3,
+        "name": "User 1",
+        "clan": {
+            "id": 1,
+            "name": "Clan Name",
+            "tag": "ClanTag"
+        }
     }
-  }
 }
 ```
   
@@ -451,7 +454,7 @@ Returns a list of maps most played by a given player.
 
 #### URL
 ```
-/api/get_player_most_played
+/get_player_most_played
 ```
 
 #### Parameters
@@ -459,38 +462,33 @@ Returns a list of maps most played by a given player.
 `id` = The users id<br>
 `name` = The user's name
 
-* Required mods<br>
-`mods` = <vn/rx/ap>
-  * `vn` - Vanilla
-  * `rx` - Relax
-  * `ap` - Autopilot
 * Required mode<br>
-`mode` = <0-3>
+`mode` = <0-8>
 * Optional limit<br>
 `limit` = <1-100>, default: 25
 
 #### Example
 ```md
-https://.../api/get_player_most_played?id=3&mods=vn&mode=3&limit=6
+https://api.../get_player_most_played?id=3&mods=vn&mode=3&limit=6
 ```
 
 #### Response
 ```json
 {
-  "status": "success",
-  "maps": [
-    {
-      "md5": "ee8b9ca2f6373d346818974d632bd0ff",
-      "id": 2127114,
-      "set_id": 1016347,
-      "status": 2,
-      "artist": "Silentroom",
-      "title": "Protoflicker",
-      "version": "Master",
-      "creator": "DeRandom Otaku",
-      "plays": 24
-    }, { ... }
-  ]
+    "status": "success",
+    "maps": [{
+        "md5": "51df3da24abe038386e2ebaf14551d14",
+        "id": 2679663,
+        "set_id": 1290926,
+        "status": 2,
+        "artist": "Five Hammer",
+        "title": "fffff",
+        "version": "Forte fortissississimo",
+        "creator": "Luscent",
+        "plays": 28
+    }, {
+        ...
+    }]
 }
 ```
 
@@ -504,7 +502,7 @@ Returns information about a given beatmap.
 
 #### URL
 ```
-/api/get_map_info
+/get_map_info
 ```
 
 #### Parameters
@@ -514,36 +512,36 @@ Returns information about a given beatmap.
 
 #### Examples:
 ```md
-https://.../api/get_map_info?id=1172819
-https://.../api/get_map_info?md5=4a4bc3bdb6d951512db592994b08cfc7
+https://api.../get_map_info?id=1172819
+https://api.../get_map_info?md5=4a4bc3bdb6d951512db592994b08cfc7
 ```
 
 #### Response
 ```json
 {
-  "status": "success",
-  "map": {
-    "md5": "4a4bc3bdb6d951512db592994b08cfc7",
-    "id": 1172819,
-    "set_id": 553906,
-    "artist": "BLANKFIELD",
-    "title": "Goodbye",
-    "version": "Intense",
-    "creator": "Kyubey",
-    "last_update": "2017-02-25T12:56:50",
-    "total_length": 0,
-    "max_combo": 0,
-    "status": 2,
-    "plays": 16,
-    "passes": 0,
-    "mode": 0,
-    "bpm": 104.5,
-    "cs": 4,
-    "od": 10,
-    "ar": 10,
-    "hp": 4.7,
-    "diff": 8.356
-  }
+    "status": "success",
+    "map": {
+        "md5": "4a4bc3bdb6d951512db592994b08cfc7",
+        "id": 1172819,
+        "set_id": 553906,
+        "artist": "BLANKFIELD",
+        "title": "Goodbye",
+        "version": "Intense",
+        "creator": "Kyubey",
+        "last_update": "2017-02-25T12:56:50",
+        "total_length": 289,
+        "max_combo": 2516,
+        "status": 2,
+        "plays": 18,
+        "passes": 1,
+        "mode": 0,
+        "bpm": 258,
+        "cs": 4,
+        "od": 10,
+        "ar": 10,
+        "hp": 4.7,
+        "diff": 8.538
+    }
 }
 ```
 
@@ -568,7 +566,7 @@ Returns the best scores for a given beatmap & mode.
 
 #### URL
 ```
-/api/get_map_scores
+/get_map_scores
 ```
 
 #### Parameters
@@ -582,7 +580,7 @@ Returns the best scores for a given beatmap & mode.
   * `recent` - Returns beatmap's recent scores
 
 * Optional mode<br>
-`mode` = `(0-7), explained below`
+`mode` = `(0-8), explained below`
 
 * Optional limit<br>
 `limit` = <1-100>, default: 50
@@ -603,41 +601,41 @@ Returns the best scores for a given beatmap & mode.
 
 #### Examples:
 ```md
-https://.../api/get_map_scores?id=1172819&scope=recent
-https://.../api/get_map_scores?id=1172819&scope=best&mode=4
+https://api.../get_map_scores?id=1172819&scope=recent
+https://api.../get_map_scores?id=1172819&scope=best&mode=4
 ```
 
 #### Response
 ```json
 {
-  "status": "success",
-  "scores": [
-    {
-      "map_md5": "4a4bc3bdb6d951512db592994b08cfc7",
-      "score": 625250,
-      "pp": 445.184,
-      "acc": 99.361,
-      "max_combo": 1941,
-      "mods": 128,
-      "n300": 1887,
-      "n100": 17,
-      "n50": 1,
-      "nmiss": 0,
-      "ngeki": 296,
-      "nkatu": 15,
-      "grade": "S",
-      "status": 2,
-      "mode": 0,
-      "play_time": "2021-04-05T13:40:02",
-      "time_elapsed": 323012,
-      "userid": 9,
-      "perfect": 0,
-      "player_name": "User 8",
-      "clan_id": null,
-      "clan_name": null,
-      "clan_tag": null
-    }, { ... }
-  ]
+    "status": "success",
+    "scores": [{
+        "map_md5": "8d9756be1d932eb2f4760664a1497e48",
+        "score": 517771,
+        "pp": 336.419,
+        "acc": 95.115,
+        "max_combo": 144,
+        "mods": 72,
+        "n300": 108,
+        "n100": 7,
+        "n50": 0,
+        "nmiss": 1,
+        "ngeki": 41,
+        "nkatu": 5,
+        "grade": "A",
+        "status": 2,
+        "mode": 0,
+        "play_time": "2021-12-31T05:29:13",
+        "time_elapsed": 0,
+        "userid": 165,
+        "perfect": 0,
+        "player_name": "OSU",
+        "clan_id": null,
+        "clan_name": null,
+        "clan_tag": null
+    }, {
+        ...
+    }]
 }
 ```
 
@@ -660,33 +658,33 @@ Returns information about a given score.
 
 #### Example
 ```md
-https://.../api/get_score_info?id=1731
+https://api.../get_score_info?id=1731
 ```
 
 #### Response
 ```json
 {
-  "status": "success",
-  "score": {
-    "map_md5": "a53a591e8ee0e4cf66a20a070968b194",
-    "score": 546250,
-    "pp": 159.304,
-    "acc": 94.104,
-    "max_combo": 139,
-    "mods": 0,
-    "n300": 135,
-    "n100": 10,
-    "n50": 0,
-    "nmiss": 2,
-    "ngeki": 24,
-    "nkatu": 4,
-    "grade": "A",
-    "status": 2,
-    "mode": 0,
-    "play_time": "2021-04-15T01:59:26",
-    "time_elapsed": 38539,
-    "perfect": 0
-  }
+    "status": "success",
+    "score": {
+        "map_md5": "75dabfe11d5f4b3b776d5736fc1dfb70",
+        "score": 29168,
+        "pp": 10.463,
+        "acc": 95.556,
+        "max_combo": 48,
+        "mods": 0,
+        "n300": 14,
+        "n100": 1,
+        "n50": 0,
+        "nmiss": 0,
+        "ngeki": 6,
+        "nkatu": 1,
+        "grade": "F",
+        "status": 0,
+        "mode": 0,
+        "play_time": "2022-03-24T03:33:14",
+        "time_elapsed": 13500,
+        "perfect": 0
+    }
 }
 ```
 
@@ -711,12 +709,12 @@ Returns the file for a given replay (with or without headers).
 
 #### Examples:
 ```md
-https://.../api/get_replay?id=1731
-https://.../api/get_replay?id=1731&include_headers=false
+https://api.../get_replay?id=1731
+https://api.../get_replay?id=1731&include_headers=false
 ```
 
 #### Response
-```json
+```brainfuck
 Returns the replay file.
 Returns the replay file without headers for the hits and score.
 ```
@@ -740,7 +738,7 @@ Returns information for a given multiplayer match.
 
 #### Example
 ```md
-https://.../api/get_match?id=0
+https://api.../get_match?id=1
 ```
 
 #### Response (not found)
@@ -753,55 +751,57 @@ https://.../api/get_match?id=0
 #### Response
 ```json
 {
-  "status": "success",
-  "match": {
-    "name": "User's game",
-    "mode": 0,
-    "mods": 0,
-    "seed": 2600202,
-    "host": {
-      "id": 3,
-      "name": "User"
-    },
-    "refs": [
-      {
-        "id": 3,
-        "name": "User"
-      }, { ... }
-    ],
-    "in_progress": false,
-    "is_scrimming": false,
-    "map": {
-      "id": 962880,
-      "md5": "a48b273b2d4ee9e297ee333f7d216f8f",
-      "name": "TRUE - Hiryuu no Kishi [Knight's Dance]"
-    },
-    "active_slots": {
-      "0": {
-        "loaded": false,
+    "status": "success",
+    "match": {
+        "name": "User's game",
+        "mode": 0,
         "mods": 0,
-        "player": {
-          "id": 3,
-          "name": "User"
+        "seed": 2600202,
+        "host": {
+            "id": 3,
+            "name": "User"
         },
-        "skipped": false,
-        "status": 4,
-        "team": 0
-      },
-      "1": {
-        "loaded": false,
-        "mods": 0,
-        "player": {
-          "id": 5,
-          "name": "User 2"
+        "refs": [{
+            "id": 3,
+            "name": "User"
+        }, {
+            ...
+        }],
+        "in_progress": false,
+        "is_scrimming": false,
+        "map": {
+            "id": 962880,
+            "md5": "a48b273b2d4ee9e297ee333f7d216f8f",
+            "name": "TRUE - Hiryuu no Kishi [Knight's Dance]"
         },
-        "skipped": false,
-        "status": 16,
-        "team": 0
-      },
-      "...": { ... }
+        "active_slots": {
+            "0": {
+                "loaded": false,
+                "mods": 0,
+                "player": {
+                    "id": 3,
+                    "name": "User"
+                },
+                "skipped": false,
+                "status": 4,
+                "team": 0
+            },
+            "1": {
+                "loaded": false,
+                "mods": 0,
+                "player": {
+                    "id": 5,
+                    "name": "User 2"
+                },
+                "skipped": false,
+                "status": 16,
+                "team": 0
+            },
+            "...": {
+                ...
+            }
+        }
     }
-  }
 }
 ```
 
