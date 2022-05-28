@@ -649,7 +649,7 @@ Returns information about a given score.
 
 #### URL
 ```
-/api/get_score_info
+/get_score_info
 ```
 
 #### Parameters
@@ -698,7 +698,7 @@ Returns the file for a given replay (with or without headers).
 
 #### URL
 ```
-/api/get_replay
+/get_replay
 ```
 
 #### Parameters
@@ -729,7 +729,7 @@ Returns information for a given multiplayer match.
 
 #### URL
 ```
-/api/get_match
+/get_match
 ```
 
 #### Parameters
